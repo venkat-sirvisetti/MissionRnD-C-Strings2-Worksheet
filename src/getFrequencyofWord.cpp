@@ -11,11 +11,20 @@ Note: Dont modify original str or word,Just return count ,Spaces can also be par
 */
 
 #include <stdlib.h>
-
+#include<string.h>
+#include<malloc.h>
 int count_word_in_str_way_1(char *str, char *word){
-	return 0;
+	int i = 0, count = 0;
+	char *temp = (char *)malloc(sizeof(char)*strlen(word));
+	while (i <= (strlen(str) - strlen(word)))
+	{
+		strncpy(temp, str + i, strlen(word));
+		if (strcmp(temp, word) == 0)
+			count++;
+		i++;
+	}
+	return count;
 }
-
 int count_word_int_str_way_2_recursion(char *str, char *word){
 	return 0;
 }
