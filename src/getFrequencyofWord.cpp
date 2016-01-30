@@ -10,16 +10,17 @@ Output : 4
 Note: Dont modify original str or word,Just return count ,Spaces can also be part of words like "ab cd" in "ab cd ab cd" returns 2
 */
 
-#include <stdlib.h>
+
 #include<string.h>
 #include<malloc.h>
 int count_word_in_str_way_1(char *str, char *word){
 	int i = 0, count = 0;
-	char *temp = (char *)malloc(sizeof(char)*strlen(word));
+	//char *temp = (char *)malloc(sizeof(char)*strlen(word));
 	while (i <= (strlen(str) - strlen(word)))
 	{
-		strncpy(temp, str + i, strlen(word));
-		if (strcmp(temp, word) == 0)
+
+		//strncpy(temp, str + i, strlen(word));
+		if (strncmp(str+i, word,strlen(word)) == 0)
 			count++;
 		i++;
 	}
